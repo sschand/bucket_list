@@ -1,0 +1,45 @@
+<div class="" ng-controller="DashboardController">
+    <a href="#index">Bucket List</a>
+    <a href="#dashboard">Home</a>
+    <a href="#/" ng-click="logout()">Logout</a>
+
+
+    <h4>Welcome, {{current_user.name}}!</h4>
+
+    <div class="row">
+        <form name="bucketForm">
+            <div ng-messages="bucketForm.name.$error" style="color:maroon" role="alert">
+               <div ng-message="required">Name is required</div>
+               <div ng-message="minlength">Name is too short: must be atleast5 charactersz</div>
+            </div>
+            <input type="text" name="name" required ng-minlength="5" ng-model="bucketList.name" >
+
+            <div ng-messages="bucketForm.description.$error" style="color:maroon" role="alert">
+               <div ng-message="required">Description is required</div>
+               <div ng-message="minlength">Description is too short: must be atleast 20 charactersz</div>
+            </div>
+            <input type="text" name="description" required  ng-minlength="20" ng-model="bucketList.description" >
+
+            <select ng-model="bucketList.user_name">
+                <option ng-repeat="user in other_users" value="{{ user.name }}">{{ user.name }}</option>
+            </select>
+            <button class="right button-primary" type="button" ng-click="addToList()">Add to List</button>
+        </form>
+    </div>
+
+
+    <h4>Before I die I want to:</h4>
+
+    <h2>List of other users (Click to view profile)</h2>
+    <ul>
+        <li ng-repeat="item in list">
+            <input type="checkbox" > {{ item.user_name }} | {{ item.name }} - {{ item.description }}
+         </li>
+    </ul>
+
+
+    <h4>List of other users (Click to view profile)</h4>
+    <p ng-repeat="other in other_users">
+        <a href="#user/{{ other._id}}" ng-click="user_profile(other)">{{other.name}}</a>
+    </p>
+</div>

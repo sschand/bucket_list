@@ -1,0 +1,16 @@
+<div class="" ng-controller="ProfileController">
+    <h1>Bucket List</h1>
+    <a href="#dashboard">Home</a>
+    <a href="#/" ng-click="logout()">Logout</a>
+
+
+    <h4>Welcome, {{current_user.name}}!</h4>
+
+
+    <ul>
+        <li ng-repeat="item in list">
+            <input type="checkbox" > {{ item.user_name }} | {{ item.name }} - {{ item.description }}
+         </li>
+    </ul>
+
+</div>

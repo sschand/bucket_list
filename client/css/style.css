@@ -1,0 +1,50 @@
+.div_border{
+    border: 1px solid black;
+    padding: 5%;
+}
+.right{
+    float: right;
+}
+.center{
+    text-align: center;
+}
+.main{
+    margin-bottom:  2em;
+}
+.off_left{
+    margin-left: 5%;
+}
+.green{
+    background-color: #abdace !important;
+    border-color: #abdace !important;
+}
+.red{
+    background-color: #daabab !important;
+    border-color: #daabab !important;
+}
+.errors{
+    color: red;
+}
+
+img.prod{
+    height: 7em;
+    width: 7em;
+}
+
+img.thumbnail {
+    height: 2.5em;
+    width: 2.5em;
+}
+.img_box{
+
+    margin: 0em 1em;
+}
+
+.img_box p{
+    margin: 0px !important;
+    text-align: center;
+}
+
+.vert_center{
+    vertical-align: top;
+}
